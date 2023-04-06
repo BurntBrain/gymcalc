@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GYMCALC</title>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body>
+    <center>
+      <h1>1RM Calculator</h1>
+      
+      <h2>Reps:</h2><input id="rep" type="number" min="1" max="36" value="1" style="width: 90px;">
+      
+      <h2>Weight:</h2><input id="weight" type="number" step=".01" min="0" value="1" style="width: 90px;">
+      
+    
+      <h3>Please select formulas</h3>
+      
+    </center>
+    
+    <div id="checks" class="checkboxes">
+      <div><input id="br" type="checkbox"><label for="br">Brzycki </label></div>
+      <div><input id="ep" type="checkbox"><label for="ep">Epley</label></div>
+      <div><input id="la" type="checkbox"><label for="la">Lander</label></div>
+      <div><input id="lo" type="checkbox"><label for="lo">Lombardi</label></div>
+      <div><input id="ma" type="checkbox"><label for="ma">Mayhew</label></div>
+      <div><input id="oc" type="checkbox"><label for="oc">O'Conner</label></div>
+      <div><input id="wa" type="checkbox"><label for="wa">Wathan</label></div>
+      
+    </div>
+    <center>
+      
+      <input id="calc" type="button" value="CALCULATE">
+      <h2 id="1RM_Out"></h2>
+      
+    </center>
+    
+	<script>
+	  calc.addEventListener("click", function(){
+	    var reps = document.getElementById("rep").value;
+	    var weight = document.getElementById("weight").value;
+	    
+	    var sum = 0;
+	    var checked = 0;
+	    if(document.getElementById("br").checked){
+	      sum += weight * (36 / (37 - reps));
+	      checked++;
+	    }
+	    if(document.getElementById("ep").checked){
+	      sum += weight * (1 + 0.0333 * reps);
+	      checked++;
+	    }
+	    if(document.getElementById("la").checked){
+	      sum += (100 * weight) / (101.3 - 2.67123 * reps);
+	      checked++;
+	      
+	    }
+	    if(document.getElementById("lo").checked){
+	      sum += weight * reps ** 0.1;
+	      checked++;
+	    }
+	    if(document.getElementById("ma").checked){
+	      sum += (100 * weight) / (52.2 + (41.9 * Math.E**(-0.055 * reps)));
+	      checked++;
+	      
+	    }
+	    if(document.getElementById("oc").checked){
+	      sum += weight * (1 + 0.025 * reps);
+	      checked++;
+	    }
+	    if(document.getElementById("wa").checked){
+	      sum += (100 * weight) / (48.8 + (53.8 * Math.E ** (-0.075 * reps)));
+	      checked++;
+	    }
+	    
+	    if(checked==0){
+	      document.getElementById("1RM_Out").textContent="";
+	    }else if(reps==1){
+	      document.getElementById("1RM_Out").textContent=weight;
+	    }else{
+	      document.getElementById("1RM_Out").textContent="Your approximate 1RM using the average of the formulas selected is " + (Math.round(sum/checked+.5));
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	  });
+	  
+	  
+	  
+	</script>
+  </body>
+</html>

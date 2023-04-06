@@ -1,0 +1,43 @@
+
+H1 {
+    color: rgb(69, 42, 165);
+    font-family: 'FreeMono', 'monospace', Arial, sans-serif;
+    font-size: 60px;
+    line-height: 0.8;
+    
+}
+H2 {
+    color: rgb(69, 42, 165);
+    font-family: 'FreeMono', 'monospace', Arial, sans-serif;
+    font-size: 30px;
+    
+    
+}
+
+Label {
+  color: rgb(69, 42, 165);
+    font-family: 'FreeMono', 'monospace', Arial, sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background-color: #020c3a;
+}
+
+
+H3 {
+  color: rgb(69, 42, 165);
+    font-family: 'FreeMono', 'monospace', Arial, sans-serif;
+}
+
+.checkboxes{
+  position:absolute;
+  top:55%;
+  left:45%;
+}
+
+input{
+  border: 0px;
+  background-color : #363636;
+  color: rgb(232, 232, 232);
+}
