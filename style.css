@@ -1,4 +1,3 @@
-
 H1 {
     color: rgb(69, 42, 165);
     font-family: 'FreeMono', 'monospace', Arial, sans-serif;
@@ -31,13 +30,26 @@ H3 {
 }
 
 .checkboxes{
-  position:absolute;
-  top:55%;
-  left:45%;
+  position:relative;
+  top:47%;
+  text-align: center;
 }
 
 input{
   border: 0px;
   background-color : #363636;
   color: rgb(232, 232, 232);
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.lbs{
+    position: relative;
+    
+}
+.kgs{
+    position: relative;
+    
 }
