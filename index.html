@@ -22,13 +22,13 @@
     </center>
     
     <div id="checks" class="checkboxes">
-      <div><input id="br" type="checkbox"><label for="br">Brzycki </label></div>
-      <div><input id="ep" type="checkbox"><label for="ep">Epley</label></div>
-      <div><input id="la" type="checkbox"><label for="la">Lander</label></div>
-      <div><input id="lo" type="checkbox"><label for="lo">Lombardi</label></div>
-      <div><input id="ma" type="checkbox"><label for="ma">Mayhew</label></div>
-      <div><input id="oc" type="checkbox"><label for="oc">O'Conner</label></div>
-      <div><input id="wa" type="checkbox"><label for="wa">Wathan</label></div>
+      <div><input id="br" type="checkbox"><label for="br"> Brzycki </label></div>
+      <div><input id="ep" type="checkbox"><label for="ep"> Epley</label></div>
+      <div><input id="la" type="checkbox"><label for="la"> Lander</label></div>
+      <div><input id="lo" type="checkbox"><label for="lo"> Lombardi</label></div>
+      <div><input id="ma" type="checkbox"><label for="ma"> Mayhew</label></div>
+      <div><input id="oc" type="checkbox"><label for="oc"> O'Conner</label></div>
+      <div><input id="wa" type="checkbox"><label for="wa"> Wathan</label></div>
       
     </div>
     <center>
@@ -37,6 +37,14 @@
       <h2 id="1RM_Out"></h2>
       
     </center>
+    
+    
+    <center>
+        <label for="kg">KG</label><input type="number" id="kg" class="kgs" value="0"><br>
+        <label for="lb">LBS</label><input type="number" id="lb" class="lbs" value="0">
+    </center>    
+    
+    
     
 	<script>
 	  calc.addEventListener("click", function(){
@@ -83,14 +91,16 @@
 	    }else{
 	      document.getElementById("1RM_Out").textContent="Your approximate 1RM using the average of the formulas selected is " + (Math.round(sum/checked+.5));
 	    }
-	    
-	    
-	    
-	    
-	    
-	    
 	  });
-	  
+      
+      kg.addEventListener("change", function(){
+        var x = document.getElementById("kg").value;
+        document.getElementById("lb").value=(x*2.204623).toFixed(3);
+      });
+      lb.addEventListener("change", function(){
+        var x = document.getElementById("lb").value;
+        document.getElementById("kg").value=(x*0.4535924).toFixed(3);
+      });
 	  
 	  
 	</script>
